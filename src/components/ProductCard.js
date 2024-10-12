@@ -2,7 +2,7 @@ import React from "react";
 import { useCartContext } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useCartContext();
+  const { addToCart, isAuthenticated } = useCartContext();
 
   return (
     <div key={product.id} className="product-card">
@@ -21,7 +21,12 @@ const ProductCard = ({ product }) => {
         <p className="price">${product.price.toFixed(2)}</p>
       </div>
       <div className="card-footer">
-        <button onClick={() => addToCart(product)} className="add-to-cart-btn">
+        <button
+          onClick={() =>
+            isAuthenticated ? addToCart(product) : alert("you are not logined")
+          }
+          className="add-to-cart-btn"
+        >
           Add to Cart
         </button>
       </div>

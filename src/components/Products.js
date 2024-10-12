@@ -28,7 +28,7 @@ const products = [
   },
 ];
 
-export default function ProductPage() {
+export default function Products() {
   return (
     <div className="product-container">
       <h2 className="product-title">Our Products</h2>

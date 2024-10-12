@@ -1,5 +1,6 @@
 import React from "react";
 import { useCartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { isAuthenticated, userDetails, cart, logout } = useCartContext();
@@ -7,9 +8,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           My Shop
-        </a>
+        </Link>
         <div className="navbar-items">
           {isAuthenticated ? (
             <>
@@ -17,12 +18,17 @@ export default function Navbar() {
               <button onClick={logout} className="logout-btn">
                 Logout
               </button>
-              <a href="/cart" className="cart-link">
+              <Link to="/account link">
+                <button className="login-btn">Account</button>
+              </Link>
+              <Link to="/cart" className="cart-link link">
                 <span className="cart-text">Cart ({cart.length})</span>
-              </a>
+              </Link>
             </>
           ) : (
-            <button className="login-btn">Login</button>
+            <Link to="/login" className="link">
+              <button className="login-btn">Login</button>
+            </Link>
           )}
         </div>
       </div>

@@ -33,6 +33,11 @@ export const CartProvider = ({ children }) => {
     const filter = cart.filter((item) => item.id != id);
     setCart(filter);
   };
+
+  const updateUserDetails = (details) => {
+    console.log("🚀 ~ updateUserDetails ~ details:", details);
+    setUserDetails(details);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -44,6 +49,7 @@ export const CartProvider = ({ children }) => {
         userDetails,
         setUserDetails,
         removeFromCart,
+        updateUserDetails,
       }}
     >
       {children}
