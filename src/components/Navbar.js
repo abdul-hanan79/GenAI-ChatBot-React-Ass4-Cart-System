@@ -18,7 +18,7 @@ export default function Navbar() {
               <button onClick={logout} className="logout-btn">
                 Logout
               </button>
-              <Link to="/account link">
+              <Link to="/account" className="link">
                 <button className="login-btn">Account</button>
               </Link>
               <Link to="/cart" className="cart-link link">
